@@ -18,16 +18,25 @@
         </h1>
     </header>
     <div role="main">
-        <% if (content !=null) { %>
-            <ol>
-                <% for(var i in content) { %>
+        <table class="table">
+            <% for(var i in content) { %>
+                <tr>
                     <% var obj=content[i]; %>
-                        <li><a href="<%=obj.link %>">
-                                <%= obj.title %>
-                            </a></li>
-                        <% } %>
-            </ol>
-            <% } %>
+                        <th>
+                            <%= obj.id %>
+                        </th>
+                        <td>
+                            <%= obj.name %>
+                        </td>
+                        <td>
+                            <%= obj.mail %>
+                        </td>
+                        <td>
+                            <%= obj.age %>
+                        </td>
+                </tr>
+                <% } %>
+        </table>
     </div>
 </body>
 

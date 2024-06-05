@@ -7,7 +7,7 @@
 - **node-app**: 基本的な Node.js アプリケーション
 - **mini_board**: ミニ掲示板アプリケーション
 - **express-app**: Express を使用した Web アプリケーション
-- **ex-gen-app**: Express ジェネレータを使用して作成されたアプリケーション
+- **ex-gen-app**: Express ジェネレータを使用して作成されたアプリケーション（sqlite3 を使用）
 
 ## 依存関係のインストール
 
@@ -25,4 +25,23 @@ npm install
 
 cd ../ex-gen-app
 npm install
+```
+
+## ex-gen-app の補足
+
+sqlite の設定は教科書を参照してください
+
+ダウンロードページ
+http://sqlitebrowser.org
+
+スキーマ
+
+```sql
+CREATE TABLE "mydata" (
+	"id"	INTEGER NOT NULL UNIQUE,
+	"name"	TEXT NOT NULL,
+	"mail"	TEXT,
+	"age"	INTEGER,
+	PRIMARY KEY("id" AUTOINCREMENT)
+)
 ```
