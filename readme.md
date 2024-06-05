@@ -59,6 +59,7 @@ localhost:3000/hello
 localhost:3000/hello/add
 localhost:3000/hello/show?id=< 任意のidを入力する >
 localhost:3000/hello/edit?id=< 任意のidを入力する >
+localhost:3000/hello/delete?id=< 任意のidを入力する >
 ```
 
 ## ex-gen-app の補足
