@@ -46,6 +46,14 @@ npm start
 npm run nodemon
 ```
 
+## 表示方法
+
+- ex-gen-app
+```uri
+localhost:3000/hello
+localhost:3000/hello/add
+```
+
 ## ex-gen-app の補足
 
 sqlite の設定は教科書を参照してください
