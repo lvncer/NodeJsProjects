@@ -7,7 +7,7 @@
 - **node-app**: 基本的な伝言アプリケーション
 - **mini_board**: ミニ掲示板アプリケーション
 - **express-app**: Express を使用した Web アプリケーション
-- **ex-gen-app**: Express ジェネレータを使用して作成されたアプリケーション（sqlite3 を使用）
+- **ex-gen-app**: Express ジェネレータを使用して作成された本格的なユーザ管理アプリケーション（sqlite3 を使用）
 
 ## 依存関係のインストール
 
@@ -58,6 +58,7 @@ localhost:3000
 localhost:3000/hello
 localhost:3000/hello/add
 localhost:3000/hello/show?id=< 任意のidを入力する >
+localhost:3000/hello/edit?id=< 任意のidを入力する >
 ```
 
 ## ex-gen-app の補足
