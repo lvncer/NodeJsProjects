@@ -27,6 +27,25 @@ cd ../ex-gen-app
 npm install
 ```
 
+## 実行方法
+
+- miniboard / node-app
+```bash
+node app
+```
+
+- express-app
+```bash
+node index
+```
+
+- ex-gen-app
+```bash
+node bin/www
+npm start
+npm run nodemon
+```
+
 ## ex-gen-app の補足
 
 sqlite の設定は教科書を参照してください
