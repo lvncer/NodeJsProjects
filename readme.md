@@ -60,7 +60,9 @@ localhost:3000/hello/add
 localhost:3000/hello/show?id=< 任意のidを入力する >
 localhost:3000/hello/edit?id=< 任意のidを入力する >
 localhost:3000/hello/delete?id=< 任意のidを入力する >
+localhost:3000/hello/find
 ```
+** findでは検索条件をすべて入力してください **
 
 ## ex-gen-app の補足
 すでにスキーマ定義ファイルは設定されていますので、特別にすることはありません。
