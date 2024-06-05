@@ -4,7 +4,7 @@
 
 ## プロジェクト一覧
 
-- **node-app**: 基本的な Node.js アプリケーション
+- **node-app**: 基本的な伝言アプリケーション
 - **mini_board**: ミニ掲示板アプリケーション
 - **express-app**: Express を使用した Web アプリケーション
 - **ex-gen-app**: Express ジェネレータを使用して作成されたアプリケーション（sqlite3 を使用）
@@ -48,15 +48,21 @@ npm run nodemon
 
 ## 表示方法
 
+- node-app / miniboard / express-app
+```uri
+localhost:3000
+```
+
 - ex-gen-app
 ```uri
 localhost:3000/hello
 localhost:3000/hello/add
+localhost:3000/hello/show?id=< 任意のidを入力する >
 ```
 
 ## ex-gen-app の補足
-
-sqlite の設定は教科書を参照してください
+すでにスキーマ定義ファイルは設定されていますので、特別にすることはありません。
+sqlite の設定は教科書を参照してください。
 
 ダウンロードページ
 http://sqlitebrowser.org
