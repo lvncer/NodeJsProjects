@@ -8,6 +8,7 @@
 - **mini_board**: ミニ掲示板アプリケーション
 - **express-app**: Express を使用した Web アプリケーション
 - **ex-gen-app**: Express ジェネレータを使用して作成された本格的なユーザ管理アプリケーション（sqlite3 を使用）
+- **prisma-app**: ユーザ管理アプリケーション（prisma を使用） *本来はこのディレクトリは作成しません。一応保存用。
 
 ## 依存関係のインストール
 
@@ -25,35 +26,48 @@ npm install
 
 cd ../ex-gen-app
 npm install
+
+cd ../prisma-app
+npm install
 ```
 
 ## 実行方法
 
 - miniboard / node-app
+
 ```bash
 node app
 ```
 
 - express-app
+
 ```bash
 node index
 ```
 
 - ex-gen-app
+
 ```bash
 node bin/www
 npm start
 npm run nodemon
 ```
 
+- prisma-app
+
+```bash
+```
+
 ## 表示方法
 
 - node-app / miniboard / express-app
+
 ```uri
 localhost:3000
 ```
 
 - ex-gen-app
+
 ```uri
 localhost:3000/hello
 localhost:3000/hello/add
@@ -62,23 +76,20 @@ localhost:3000/hello/edit?id=< 任意のidを入力する >
 localhost:3000/hello/delete?id=< 任意のidを入力する >
 localhost:3000/hello/find
 ```
-** findでは検索条件をすべて入力してください **
 
 ## ex-gen-app の補足
+
 すでにスキーマ定義ファイルは設定されていますので、特別にすることはありません。
 sqlite の設定は教科書を参照してください。
 
 ダウンロードページ
 http://sqlitebrowser.org
 
-スキーマ
+## prisma 関連のダウンロード
 
-```sql
-CREATE TABLE "mydata" (
-	"id"	INTEGER NOT NULL UNIQUE,
-	"name"	TEXT NOT NULL,
-	"mail"	TEXT,
-	"age"	INTEGER,
-	PRIMARY KEY("id" AUTOINCREMENT)
-)
+```bash
+npm install prisma -g
+prisma init
+prisma migrate dev --name initial
+prisma studio
 ```
