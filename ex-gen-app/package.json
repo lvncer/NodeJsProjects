@@ -7,6 +7,7 @@
     "nodemon": "nodemon ./bin/www"
   },
   "dependencies": {
+    "@prisma/client": "^5.15.0",
     "cookie-parser": "~1.4.4",
     "debug": "~2.6.9",
     "ejs": "~2.6.1",
@@ -17,5 +18,8 @@
     "morgan": "~1.9.1",
     "sqlite3": "^5.1.7",
     "xml2js": "^0.6.2"
+  },
+  "devDependencies": {
+    "prisma": "^5.15.0"
   }
 }

@@ -8,7 +8,6 @@
 - **mini_board**: ミニ掲示板アプリケーション
 - **express-app**: Express を使用した Web アプリケーション
 - **ex-gen-app**: Express ジェネレータを使用して作成された本格的なユーザ管理アプリケーション（sqlite3 を使用）
-- **prisma-app**: ユーザ管理アプリケーション（prisma を使用） *本来はこのディレクトリは作成しません。一応保存用。
 
 ## 依存関係のインストール
 
@@ -25,9 +24,6 @@ cd ../express-app
 npm install
 
 cd ../ex-gen-app
-npm install
-
-cd ../prisma-app
 npm install
 ```
 
@@ -51,11 +47,6 @@ node index
 node bin/www
 npm start
 npm run nodemon
-```
-
-- prisma-app
-
-```bash
 ```
 
 ## 表示方法
