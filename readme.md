@@ -2,6 +2,9 @@
 
 このリポジトリには複数の Node.js プロジェクトが含まれています。各プロジェクトは独立して動作しますが、共通の開発環境を共有します。
 
+**注意：mydb.dbファイルが更新されるたびにリセットされるので、過去のプロジェクトが利用できないバグが発生します。
+ちゃんと保存してからZIPフォルダに保存します。
+
 ## プロジェクト一覧
 
 - **node-app**: 基本的な伝言アプリケーション
@@ -66,6 +69,8 @@ localhost:3000/hello/show?id=< 任意のidを入力する >
 localhost:3000/hello/edit?id=< 任意のidを入力する >
 localhost:3000/hello/delete?id=< 任意のidを入力する >
 localhost:3000/hello/find
+localhost:3000/users
+localhost:3000/users?id=< id >
 ```
 
 ## ex-gen-app の補足
