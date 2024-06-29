@@ -1,0 +1,8 @@
+-- CreateTable
+CREATE TABLE "Schedule" (
+    "id" INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+    "train" TEXT NOT NULL,
+    "station" TEXT,
+    "createdAt" DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    "updatedAt" DATETIME NOT NULL
+);

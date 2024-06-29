@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        <%= title %>
+    </title>
+</head>
+
+<body>
+    <h1>
+        <%= title %>
+    </h1>
+    <p>
+        <% schedules %>
+    </p>
+    <table>
+        <thead>
+            <tr>
+                <th>Schedule</th>
+                <th>Train</th>
+                <th>Station</th>
+                <th>Arrival Time</th>
+                <th>Departure Time</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% schedules.forEach(schedule=> { %>
+                <tr>
+                    <td>
+                        <%= schedule.id %>
+                    </td>
+                    <td>
+                        <%= schedule.train %>
+                    </td>
+                    <td>
+                        <%= schedule.station %>
+                    </td>
+                    <td>
+                        <%= schedule.arrivalTime %>
+                    </td>
+                    <td>
+                        <%= schedule.departureTime %>
+                    </td>
+                </tr>
+                <% }); %>
+        </tbody>
+    </table>
+</body>
+
+</html>

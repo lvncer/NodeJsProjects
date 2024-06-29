@@ -2,15 +2,13 @@
 
 このリポジトリには複数の Node.js プロジェクトが含まれています。各プロジェクトは独立して動作しますが、共通の開発環境を共有します。
 
-**注意：mydb.dbファイルが更新されるたびにリセットされるので、過去のプロジェクトが利用できないバグが発生します。
-ちゃんと保存してからZIPフォルダに保存します。
-
 ## プロジェクト一覧
 
 - **node-app**: 基本的な伝言アプリケーション
 - **mini_board**: ミニ掲示板アプリケーション
 - **express-app**: Express を使用した Web アプリケーション
-- **ex-gen-app**: Express ジェネレータを使用して作成された本格的なユーザ管理アプリケーション（sqlite3 を使用）
+- **sqlite3-app**: SQlite3 を使用した ユーザ情報管理アプリケーション
+- **ex-gen-app**: Prisma を使用して作成された本格的なユーザ管理アプリケーション
 
 ## 依存関係のインストール
 
@@ -24,6 +22,9 @@ cd ../mini_board
 npm install
 
 cd ../express-app
+npm install
+
+cd ../sqlite3-app
 npm install
 
 cd ../ex-gen-app
@@ -44,7 +45,7 @@ node app
 node index
 ```
 
-- ex-gen-app
+- sqlite3-app / ex-gen-app
 
 ```bash
 node bin/www
@@ -60,7 +61,7 @@ npm run nodemon
 localhost:3000
 ```
 
-- ex-gen-app
+- sqlite3-app
 
 ```uri
 localhost:3000/hello
@@ -69,17 +70,20 @@ localhost:3000/hello/show?id=< 任意のidを入力する >
 localhost:3000/hello/edit?id=< 任意のidを入力する >
 localhost:3000/hello/delete?id=< 任意のidを入力する >
 localhost:3000/hello/find
+```
+
+- ex-gen-app
+
+```uri
 localhost:3000/users
 localhost:3000/users?id=< id >
 ```
 
-## ex-gen-app の補足
+## SQLite3 関連のパッケージ
 
-すでにスキーマ定義ファイルは設定されていますので、特別にすることはありません。
-sqlite の設定は教科書を参照してください。
-
-ダウンロードページ
-http://sqlitebrowser.org
+```bash
+npm install sqlite3
+```
 
 ## prisma 関連のダウンロード
 
