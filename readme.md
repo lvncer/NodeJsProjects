@@ -66,9 +66,9 @@ localhost:3000
 ```uri
 localhost:3000/hello
 localhost:3000/hello/add
-localhost:3000/hello/show?id=< 任意のidを入力する >
-localhost:3000/hello/edit?id=< 任意のidを入力する >
-localhost:3000/hello/delete?id=< 任意のidを入力する >
+localhost:3000/hello/show?id=< 任意のID >
+localhost:3000/hello/edit?id=< 任意のID >
+localhost:3000/hello/delete?id=< 任意のID >
 localhost:3000/hello/find
 ```
 
@@ -76,14 +76,14 @@ localhost:3000/hello/find
 
 ```uri
 localhost:3000/users
-localhost:3000/users?id=< id >
+localhost:3000/users?id=< 任意のID >
+localhost:3000/users/find?min=< 任意の検索条件 >&max=< 任意の検索条件 >
+localhost:3000/users/add
+localhost:3000/users/edit/< 任意のID >
+localhost:3000/users/delete/< 任意のID >
 ```
 
-## SQLite3 関連のパッケージ
-
-```bash
-npm install sqlite3
-```
+**/users ではリロードすることでページネーションが実行されます**
 
 ## prisma 関連のダウンロード
 
