@@ -39,3 +39,11 @@ model Hotel {
   delux Int?
   Ioc Int?
 }
+
+model Vegetable {
+  id          Int      @id @default(autoincrement())
+  name        String
+  description String?
+  stock       Int
+  price       Float
+}
