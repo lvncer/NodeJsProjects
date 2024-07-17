@@ -11,6 +11,7 @@ var helloRouter = require("./routes/hello");
 var scheduleRouter = require("./routes/schedule");
 var scheduleRouter = require("./routes/hotel");
 var superRouter = require("./routes/super");
+var boardsRouter = require('./routes/boards');
 
 var app = express();
 
@@ -37,6 +38,7 @@ app.use("/users", usersRouter);
 app.use("/hello", helloRouter);
 app.use("/schedules", scheduleRouter);
 app.use("/super", superRouter);
+app.use('/boards', boardsRouter);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {

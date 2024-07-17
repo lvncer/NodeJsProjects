@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vegetable List</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+
+<body>
+    <h1>Vegetable List</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Price</th>
+                <th>Description</th>
+                <th>Stock</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% vegetables.forEach(vegetable=> { %>
+                <tr>
+                    <td>
+                        <%= vegetable.name %>
+                    </td>
+                    <td>
+                        <%= vegetable.price %>
+                    </td>
+                    <td>
+                        <%= vegetable.description %>
+                    </td>
+                    <td>
+                        <%= vegetable.stock %>
+                    </td>
+                </tr>
+                <% }) %>
+        </tbody>
+    </table>
+</body>
+
+</html>
