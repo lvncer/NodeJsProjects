@@ -29,9 +29,12 @@ npm install
 
 cd ../ex-gen-app
 npm install
+
+cd ../document_app
+npm install
 ```
 
-## 実行方法
+## サーバ起動方法
 
 - miniboard / node-app
 
@@ -45,7 +48,7 @@ node app
 node index
 ```
 
-- sqlite3-app / ex-gen-app
+- sqlite3-app / ex-gen-app / document_app
 
 ```bash
 node bin/www
@@ -57,39 +60,36 @@ npm run nodemon
 
 - node-app / miniboard / express-app
 
-```uri
 localhost:3000
-```
 
 - sqlite3-app
 
-```uri
 localhost:3000/hello
+<br>
 localhost:3000/hello/add
-localhost:3000/hello/show?id=< 任意のID >
-localhost:3000/hello/edit?id=< 任意のID >
-localhost:3000/hello/delete?id=< 任意のID >
+<br>
+localhost:3000/hello/show?id=< 任意の ID >
+<br>
+localhost:3000/hello/edit?id=< 任意の ID >
+<br>
+localhost:3000/hello/delete?id=< 任意の ID >
+<br>
 localhost:3000/hello/find
-```
 
 - ex-gen-app
 
-```uri
 localhost:3000/users
-localhost:3000/users?id=< 任意のID >
+<br>
+localhost:3000/users?id=< 任意の ID >
+<br>
 localhost:3000/users/find?min=< 任意の検索条件 >&max=< 任意の検索条件 >
+<br>
 localhost:3000/users/add
-localhost:3000/users/edit/< 任意のID >
-localhost:3000/users/delete/< 任意のID >
-```
-
-**/users ではリロードすることでページネーションが実行されます**
-
-## prisma 関連のダウンロード
-
-```bash
-npm install prisma -g
-prisma init
-prisma migrate dev --name initial
-prisma studio
-```
+<br>
+localhost:3000/users/edit/< 任意の ID >
+<br>
+localhost:3000/users/delete/< 任意の ID >
+<br>
+localhost:3000/users/login
+<br>
+localhost:3000/boards
