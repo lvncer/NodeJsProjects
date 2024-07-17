@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <title>Login</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.css" rel="stylesheet"
+        crossorigin="anonymous">
+    <style>
+        .table-wrapper {
+            width: 100%;
+            height: 200px;
+            overflow: auto;
+            padding: 5px;
+            border: 2px solid #a3a3a3;
+        }
+    </style>
+    <script>
+        var accountId = '';
+        var mkdata = [];
+        var title = '';
+        var source = '';
+        var content = '';
+        var editId = 0;
+        var mode = '新規作成';
+
+        // 表示の更新
+        function refresh() {
+            document.querySelector("#accountId").textContent = accountId;
+            document.querySelector("#title").value = title;
+            document.querySelector("#source").value = source;
+            document.querySelector("#content").innerHTML = content;
+            document.querySelector("#modebtn").value = mode;
+        }
+        // データの更新
+        function refreshData() {
+            let con = ""
+            mkdata.map((ob) => {
+                con += "<tr><td>";
+                con += '<a className="text-dark" href="#" onClick="getById(event)" name="' + ob.id + '">';
+                con += ob.title + "</a>";
+                con += "</td></tr>";
+            });
+            document.querySelector('#datacontainer').innerHTML = con;
+        }
+
+        // アカウントのチェック
+        function getAccount() {
+            fetch('/api/check')
+                .then(resp => resp.json())
+                .then(res => {
+                    if (res.result != false) {
+                        accountId = res.result;
+                        getAllData();
+                        refresh();
+                    } else {
+                        window.location.href = "/login.html"; // ☆ログインページ
+                    }
+                });
+        }
+        // 全データを取得
+        function getAllData() {
+            fetch('/api/all')
+                .then(resp => resp.json())
+                .then(res => {
+                    mkdata = res;
+                    refreshData();
+                });
+        }
+        // 指定IDのデータを取得
+        function getById(e) {
+            fetch('/api/mark/' + e.target.name)
+                .then(resp => resp.json())
+                .then(res => {
+                    title = res.title;
+                    source = res.content;
+                    editId = res.id;
+                    getRender(res.content);
+                    mode = "更新";
+                });
+        }
+        // Markdownにレンダリングする
+        function getRender(src) {
+            const source = { source: src };
+            fetch('/api/mark/render', {
+                method: 'post',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(source),
+            }).then(data => data.json())
+                .then(res => {
+                    content = res.render;
+                    refresh();
+                });
+        }
+        // データを送信する
+        function sendData() {
+            title = document.querySelector("#title").value;
+            source = document.querySelector("#source").value;
+            if (mode == '新規作成') {
+                create();
+            } else {
+                update();
+            }
+        }
+        // レコードを新規作成する
+        function create() {
+            const data = {
+                title: title,
+                content: source,
+                accountId: accountId
+            }
+            fetch('/api/add', {
+                method: 'post',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(data),
+            }).then(data => {
+                getAllData();
+            });
+        }
+        // レコードを更新する
+        function update() {
+            const data = {
+                title: title,
+                content: source,
+                id: editId
+            }
+            fetch('/api/mark/edit', {
+                method: 'post',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(data),
+            }).then(data => {
+                getAllData();
+            });
+        }
+    </script>
+</head>
+
+<body class="container" onload="getAccount()">
+    <div class="App">
+        <header>
+            <h1 class="display-4 text-primary">Markdown data</h1>
+        </header>
+        <div role="main">
+            <p class="h5 my-4">Hi,
+                <span id="accountId"></span>!
+            </p>
+
+            <div class="table-wrapper">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Title</th>
+                        </tr>
+                    </thead>
+                    <tbody id="datacontainer">
+                    </tbody>
+                </table>
+            </div>
+
+            <hr />
+
+            <div>
+                <div class="form-group">
+                    <label>TITLE</label>
+                    <input type="text" name="title" id="title" class="form-control" value="" />
+                </div>
+                <div class="form-group">
+                    <label>SOURCE</label>
+                    <textarea name="source" id="source" rows="8" class="form-control" value=""></textarea>
+                </div>
+
+                <center><input id="modebtn" type="button" value="作成" onClick="sendData()" class="btn btn-primary m-2" />
+                </center>
+            </div>
+
+            <div class="card mt-4">
+                <div class="card-header text-center h5">
+                    Preview
+                </div>
+                <div class="card-body">
+                    <div id="content"></div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</body>
+
+</html>

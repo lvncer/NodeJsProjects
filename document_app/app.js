@@ -4,6 +4,7 @@ var path = require("path");
 var cookieParser = require("cookie-parser");
 var logger = require("morgan");
 const session = require("express-session");
+const bodyParser = require("body-parser");
 
 var indexRouter = require("./routes/index");
 var usersRouter = require("./routes/users");
@@ -11,7 +12,7 @@ var helloRouter = require("./routes/hello");
 var scheduleRouter = require("./routes/schedule");
 var scheduleRouter = require("./routes/hotel");
 var superRouter = require("./routes/super");
-var boardsRouter = require('./routes/boards');
+var boardsRouter = require("./routes/boards");
 
 var app = express();
 
@@ -38,7 +39,7 @@ app.use("/users", usersRouter);
 app.use("/hello", helloRouter);
 app.use("/schedules", scheduleRouter);
 app.use("/super", superRouter);
-app.use('/boards', boardsRouter);
+app.use("/boards", boardsRouter);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
@@ -55,5 +56,8 @@ app.use(function (err, req, res, next) {
   res.status(err.status || 500);
   res.render("error");
 });
+
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
 
 module.exports = app;
