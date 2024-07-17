@@ -60,36 +60,24 @@ npm run nodemon
 
 - node-app / miniboard / express-app
 
-localhost:3000
+1. http://localhost:3000
 
 - sqlite3-app
 
-localhost:3000/hello
-<br>
-localhost:3000/hello/add
-<br>
-localhost:3000/hello/show?id=< 任意の ID >
-<br>
-localhost:3000/hello/edit?id=< 任意の ID >
-<br>
-localhost:3000/hello/delete?id=< 任意の ID >
-<br>
-localhost:3000/hello/find
+1. http://localhost:3000/hello
+2. http://localhost:3000/hello/add
+3. http://localhost:3000/hello/show?id=1
+4. http://localhost:3000/hello/edit?id=1
+5. http://localhost:3000/hello/delete?id=1
+6. http://localhost:3000/hello/find
 
-- ex-gen-app
+- ex-gen-app / document_app
 
-localhost:3000/users
-<br>
-localhost:3000/users?id=< 任意の ID >
-<br>
-localhost:3000/users/find?min=< 任意の検索条件 >&max=< 任意の検索条件 >
-<br>
-localhost:3000/users/add
-<br>
-localhost:3000/users/edit/< 任意の ID >
-<br>
-localhost:3000/users/delete/< 任意の ID >
-<br>
-localhost:3000/users/login
-<br>
-localhost:3000/boards
+1. http://localhost:3000/users
+2. http://localhost:3000/users?id=1
+3. http://localhost:3000/users/find?min=20&max=35
+4. http://localhost:3000/users/add
+5. http://localhost:3000/users/edit/1
+6. http://localhost:3000/users/delete/1
+7. http://localhost:3000/users/login
+8. http://localhost:3000/boards
