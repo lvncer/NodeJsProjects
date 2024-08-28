@@ -9,6 +9,7 @@
 - **express-app**: Express を使用した Web アプリケーション
 - **sqlite3-app**: SQlite3 を使用した ユーザ情報管理アプリケーション
 - **ex-gen-app**: Prisma を使用して作成された本格的なユーザ管理アプリケーション
+- **ex-gen-app**: Prisma を使用して作成された markdown ドキュメント管理アプリケーション
 
 ## 依存関係のインストール
 
@@ -79,5 +80,8 @@ npm run nodemon
 4. http://localhost:3000/users/add
 5. http://localhost:3000/users/edit/1
 6. http://localhost:3000/users/delete/1
-7. http://localhost:3000/users/login
-8. http://localhost:3000/boards
+
+- document_app
+
+1. http://localhost:3000/users/login
+2. http://localhost:3000/boards
