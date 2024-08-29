@@ -7,9 +7,10 @@
 - **node-app**: 基本的な伝言アプリケーション
 - **mini_board**: ミニ掲示板アプリケーション
 - **express-app**: Express を使用した Web アプリケーション
-- **sqlite3-app**: SQlite3 を使用した ユーザ情報管理アプリケーション
-- **ex-gen-app**: Prisma を使用して作成された本格的なユーザ管理アプリケーション
-- **ex-gen-app**: Prisma を使用して作成された markdown ドキュメント管理アプリケーション
+- **sqlite3-app**: ユーザ情報管理アプリケーション(SQLite)
+- **ex-gen-app**: ユーザ管理アプリケーション(Prisma)
+- **document_app**: markdown ドキュメント管理アプリケーション(Prisma)
+- **react-app**: markdown ドキュメント管理アプリケーション(React)
 
 ## 依存関係のインストール
 
@@ -32,6 +33,9 @@ cd ../ex-gen-app
 npm install
 
 cd ../document_app
+npm install
+
+cd ../react_app
 npm install
 ```
 
@@ -57,9 +61,15 @@ npm start
 npm run nodemon
 ```
 
+- react-app
+
+```bash
+npm run start
+```
+
 ## 表示方法
 
-- node-app / miniboard / express-app
+- node-app / miniboard / express-app / react-app
 
 1. http://localhost:3000
 
